@@ -1,3 +1,4 @@
+
 // ==UserScript==
 // @name         Aviso.bz script.
 // @namespace    http://tampermonkey.net/
@@ -11,7 +12,7 @@
 
 (function() {
     'use strict';
-    if(location.host!="aviso.bz"&&location.host!="payeer.com"){
+    if(location.host!="aviso.bz"&&location.host!="payeer.com"&&location.host!="nek2.chatovod.com"%%location.host!="mail.google.com"){
         // Crea un elemento <div> para el rectángulo
         const miRectangulo = document.createElement('div');
 
