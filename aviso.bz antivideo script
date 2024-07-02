@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      2024-05-18
 // @description  try to take over the world!
-// @author       You
+// @author       DrFrankGL (CMV63)
 // @match        */*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=blogspot.com
 // @grant        none
