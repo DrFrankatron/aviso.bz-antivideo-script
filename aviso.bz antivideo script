@@ -1,0 +1,70 @@
+// ==UserScript==
+// @name         Aviso.bz script.
+// @namespace    http://tampermonkey.net/
+// @version      2024-05-18
+// @description  try to take over the world!
+// @author       You
+// @match        */*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=blogspot.com
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    if(location.host!="aviso.bz"&&location.host!="payeer.com"){
+        // Crea un elemento <div> para el rectángulo
+        const miRectangulo = document.createElement('div');
+
+        var color1=getRandomColor();
+
+        // Establece estilos para el rectángulo
+        miRectangulo.style.position = 'fixed';
+        miRectangulo.style.top = '80px'; // Cambia la posición vertical según tus necesidades
+        miRectangulo.style.left = '0px'; // Cambia la posición horizontal según tus necesidades
+        miRectangulo.style.right = '0px'; // Cambia el ancho según tus necesidades
+        miRectangulo.style.bottom = '20px'; // Cambia la altura según tus necesidades
+        miRectangulo.style.backgroundColor = color1; // Color de fondo del rectángulo
+        miRectangulo.style.zIndex = '9999'; // Ajusta el z-index según tus necesidades
+
+        // Agrega el rectángulo al cuerpo del documento
+        document.body.appendChild(miRectangulo);
+
+
+
+        // Crea un elemento <div> para el rectángulo
+        const miRectangulo2 = document.createElement('div');
+
+        // Establece estilos para el rectángulo
+        miRectangulo2.style.position = 'fixed';
+        miRectangulo2.style.top = '80px'; // Cambia la posición vertical según tus necesidades
+        miRectangulo2.style.left = '0px'; // Cambia la posición horizontal según tus necesidades
+        miRectangulo2.style.right = '20px'; // Cambia el ancho según tus necesidades
+        miRectangulo2.style.bottom = '0px'; // Cambia la altura según tus necesidades
+        miRectangulo2.style.backgroundColor = color1; // Color de fondo del rectángulo
+        miRectangulo2.style.zIndex = '9999'; // Ajusta el z-index según tus necesidades
+
+        // Agrega el rectángulo al cuerpo del documento
+        document.body.appendChild(miRectangulo2);
+        onkeydown=e=>{
+            if(e.keyCode==32){
+                color1=getRandomColor()
+                miRectangulo.style.backgroundColor = color1;
+                miRectangulo2.style.backgroundColor = color1;
+            }
+        }
+    }
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    setTimeout(()=>{
+        try{
+            document.getElementsByTagName("span")[25].click()
+        }catch(e){}
+        console.log("Span clickado!")
+    },1000)
+})();
