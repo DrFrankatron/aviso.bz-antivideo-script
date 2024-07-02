@@ -1,2 +1,2 @@
 # aviso.bz-antivideo-script
-Tu padre ;P
+No se q comentar aquí.
